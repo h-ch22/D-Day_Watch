@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name" translatable="false">D-Day Watch</string>
+    <string name="WEB_CLIENT_ID" translatable="false">583703247107-o628i7i1mk662upev605n6d7s4m4ccji.apps.googleusercontent.com</string>
+    <string name="TXT_SIGN_IN_WITH_GOOGLE">Sign in with Google</string>
+    <string name="TXT_OR">or</string>
+    <string name="TXT_SIGN_IN_WITH_EMAIL">Sign in with E-Mail</string>
+    <string name="TXT_COPYRIGHT" translatable="false">ⓒ 2024. Changjin Ha. All Rights Reserved.</string>
+    <string name="TXT_EMAIL" translatable="false">E-Mail</string>
+    <string name="TXT_PASSWORD">Password</string>
+    <string name="TXT_SIGNIN">Sign In</string>
+    <string name="TXT_SIGNUP">Sign Up</string>
+    <string name="TXT_ERROR">Error</string>
+    <string name="TXT_DESCRIPTION_SIGN_IN_ERROR">There was a problem logging in.\nPlease check your sign-up status if you are trying sign in as e-mail, or check network status and try again later.</string>
+    <string name="TXT_DESCRIPTION_SIGN_UP_ERROR">There was a problem while trying to sign up.\nPlease try again with another E-Mail or try again later.</string>
+    <string name="TXT_OK">OK</string>
+    <string name="TXT_CANCEL">Cancel</string>
+    <string name="TXT_ADD_D_DAY">Add D-Day</string>
+    <string name="TXT_TITLE_OF_D_DAY">Title of D-Day</string>
+    <string name="TXT_DATE_OF_D_DAY">Select Date</string>
+    <string name="TXT_CALCULATE_FIRST_DAY_TO_ONE">Set base date to 1 day</string>
+    <string name="TXT_NO_D_DAY_SELECTED">No date has been set.</string>
+    <string name="TXT_SELECT_IMAGE">Select Image</string>
+    <string name="TXT_SELECT_COMPLICATION_ICON">Select Complication Icon</string>
+    <string name="TXT_SELECT_COLOR">Select Color</string>
+    <string name="TXT_PREVIEW">Preview</string>
+    <string name="TXT_NO_ICON_SELECTED">No Icon selected.</string>
+    <string name="TXT_SELECT">Select</string>
+    <string name="TXT_ADDING_D_DAY">Adding D-Day</string>
+    <string name="TXT_D_DAY_BACKGROUND_TYPE">Select Background Type</string>
+    <string name="TXT_COLOR">Color</string>
+    <string name="TXT_IMAGE">Image</string>
+    <string name="TXT_SELECT_TEXT_COLOR">Select Text Color</string>
+    <string name="TXT_EMPTY_FIELD">Empty Field</string>
+    <string name="TXT_EMPTY_FIELD_CONTENTS">Please fill all fields.</string>
+    <string name="TXT_ERROR_UPLOAD">An error occurred while upload process.\nPlease check sign-in status, network status, or try again later.</string>
+    <string name="TXT_UPLOADED">Uploaded Successfully.</string>
+    <string name="TXT_DONE">Done</string>
+    <string name="TXT_CONFIRM_UPLOAD_D_DAY">Are you sure to upload D-Day?</string>
+    <string name="TXT_GET_DATA_ERROR">An error occurred while getting data.\nPlease check sign-in status, network status, or try again later.</string>
+    <string name="TXT_ANNIVERSAY_UNIT">Days</string>
+    <string name="TXT_ADD_TO_CALENDAR">Add to Calendar</string>
+    <string name="TXT_CALENDAR_ADDED">Event added to your calendar</string>
+    <string name="TXT_SIGN_IN_BY_PHONE">Please sign in from your phone.</string>
+    <string name="TXT_DELETE_D_DAY">Delete D-Day</string>
+    <string name="TXT_CONFIRM_DELETE_D_DAY">Are you sure to delete this D-Day?</string>
+    <string name="TXT_DELETED_SUCCESSFULLY">D-Day deleted successfully.</string>
+    <string name="TXT_DELETE_ERROR">There was a problem while trying to delete D-Day\nPlease try again later.</string>
+</resources>

@@ -1,0 +1,37 @@
+package com.cj.d_daywatch.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+val accent = Color(0xFFE8919A)
+val secondary = Color(0xFFf0bdc3)
+val tertiary = Color(0xFFFAB933)
+val background = Color(0xFFFFFDF5)
+val btnColor = Color(0xFFFFFFFF)
+val txtDark = Color(0xFFFFFFFF)
+val txtColor = Color(0xFF303030)
+val black = Color(0xFF000000)
+val white = Color(0xFFFFFFFF)
+val red = Color(0xFFff3b30)
+val orange = Color(0xFFff9500)
+val green = Color(0xFF34c759)
+val mint = Color(0xFF00c7bd)
+val teal = Color(0xFF30b0c7)
+val cyan = Color(0xFF32ade6)
+val blue = Color(0xFF007bff)
+val indigo = Color(0xFF5856d6)
+val purple = Color(0xFFaf52de)
+val pink = Color(0xFFff2d54)
+val brown = Color(0xFFa2855e)
+val gray = Color(0xFF8e8e93)
+val txtField = Color(0x80FFFFFF)
+
+val dDayBG1 = Color(0xFFFF7D77)
+val dDayBG2 = Color(0xFFFF93BC)
+val dDayBG3 = Color(0xFFFFCB50)
+val dDayBG4 = Color(0xFF55D368)
+val dDayBG5 = Color(0xFFAE5DFF)
+
+val backgroundAsDark = Color(0xFF52514E)
+val btnColorAsDark = Color(0xFF40403F)
+val txtColorAsDark = Color(0xFFFFFFFF)
+val txtFieldAsDark = Color(0xFF40403F)

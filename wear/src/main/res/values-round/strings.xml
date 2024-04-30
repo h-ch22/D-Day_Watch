@@ -42,4 +42,6 @@
     <string name="TXT_CALENDAR_ADDED">Event added to your calendar</string>
     <string name="TXT_SIGN_IN_BY_PHONE">Please sign in from your phone.</string>
     <string name="TXT_ADD_D_DAY_BY_PHONE">Add any D-Day on your phone.</string>
+    <string name="TXT_TITLE_OF_CONFIRM_SET_COMPLICATION">Set Complication</string>
+    <string name="TXT_CONTENTS_OF_CONFIRM_SET_COMPLICATION">Are you sure to set this d-day as complication?</string>
 </resources>

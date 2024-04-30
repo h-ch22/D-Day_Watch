@@ -38,4 +38,6 @@
     <string name="TXT_CALENDAR_ADDED">캘린더에 이벤트가 추가되었습니다.</string>
     <string name="TXT_SIGN_IN_BY_PHONE">휴대폰에서 로그인해주세요.</string>
     <string name="TXT_ADD_D_DAY_BY_PHONE">휴대전화에서 D-Day를 추가해보세요.</string>
+    <string name="TXT_TITLE_OF_CONFIRM_SET_COMPLICATION">Set Complication</string>
+    <string name="TXT_CONTENTS_OF_CONFIRM_SET_COMPLICATION">Are you sure to set this d-day as complication?</string>
 </resources>

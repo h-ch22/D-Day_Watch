@@ -120,7 +120,13 @@ class DDayHelper {
     private fun readXmlFromFile(context: Context): String?{
         val filePath = "/data/data/com.cj.d_daywatch/shared_prefs/D_DayList.xml"
         return try {
-            File(filePath).readText()
+            val file = File(filePath)
+
+            if(file.exists()){
+                File(filePath).readText()
+            } else{
+                null
+            }
         } catch (e: Exception) {
             Log.e("FileReadError", "Failed to read file", e)
             null

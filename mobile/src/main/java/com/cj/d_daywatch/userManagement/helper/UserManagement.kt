@@ -1,6 +1,8 @@
 package com.cj.d_daywatch.userManagement.helper
 
+import android.content.Context
 import androidx.activity.result.ActivityResult
+import com.cj.d_daywatch.frameworks.helper.DataStoreUtil
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
@@ -10,6 +12,7 @@ import com.google.firebase.storage.FirebaseStorage
 
 class UserManagement {
     private val auth = FirebaseAuth.getInstance()
+    private val db = FirebaseFirestore.getInstance()
 
     companion object{
         private var email: String? = null
@@ -80,6 +83,40 @@ class UserManagement {
         }.addOnFailureListener {
             it.printStackTrace()
             completion(false)
+        }
+    }
+
+    fun signOut(completion: (Boolean) -> Unit){
+        try {
+            auth.signOut()
+            completion(true)
+            return
+        } catch(e: Exception){
+            e.printStackTrace()
+            completion(false)
+            return
+        }
+    }
+
+    fun cancelMembership(completion: (Boolean) -> Unit){
+        db.collection("D_Day").document(auth.currentUser?.uid ?: "").delete().addOnCompleteListener {
+            if(it.isSuccessful){
+                auth.currentUser?.delete()?.addOnCompleteListener {
+                    completion(it.isSuccessful)
+                    return@addOnCompleteListener
+                }?.addOnFailureListener {
+                    it.printStackTrace()
+                    completion(false)
+                    return@addOnFailureListener
+                }
+            } else{
+                completion(false)
+                return@addOnCompleteListener
+            }
+        }.addOnFailureListener {
+            it.printStackTrace()
+            completion(false)
+            return@addOnFailureListener
         }
     }
 }

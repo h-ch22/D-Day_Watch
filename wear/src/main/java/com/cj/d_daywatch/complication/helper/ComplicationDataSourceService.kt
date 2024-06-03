@@ -1,15 +1,18 @@
 package com.cj.d_daywatch.complication.helper
 
 import android.content.ComponentName
+import android.graphics.drawable.Icon
 import android.util.Log
 import androidx.wear.watchface.complications.data.ComplicationData
 import androidx.wear.watchface.complications.data.ComplicationType
 import androidx.wear.watchface.complications.data.LongTextComplicationData
+import androidx.wear.watchface.complications.data.MonochromaticImage
 import androidx.wear.watchface.complications.data.PlainComplicationText
 import androidx.wear.watchface.complications.data.RangedValueComplicationData
 import androidx.wear.watchface.complications.data.ShortTextComplicationData
 import androidx.wear.watchface.complications.datasource.ComplicationRequest
 import androidx.wear.watchface.complications.datasource.SuspendingComplicationDataSourceService
+import com.cj.d_daywatch.R
 import com.cj.d_daywatch.complication.models.COMPLICATION_D_DAY_KEY
 import com.cj.d_daywatch.complication.models.COMPLICATION_D_DAY_SET_FIRST_DAY_AS_ONE_DAY
 import com.cj.d_daywatch.complication.models.dataStore
@@ -49,6 +52,14 @@ class ComplicationDataSourceService : SuspendingComplicationDataSourceService() 
                 ).setText(PlainComplicationText.Builder(dDayText.toString()).build()).setTapAction(null).build()
             }
 
+            ComplicationType.LONG_TEXT -> {
+                ShortTextComplicationData.Builder(
+                    text = PlainComplicationText.Builder(text = dDayText.toString()).build(),
+                    contentDescription = PlainComplicationText.Builder(text = "Long D-Day Counter.")
+                        .build()
+                ).setTapAction(null).build()
+            }
+
             else -> {
                 ShortTextComplicationData.Builder(
                     text = PlainComplicationText.Builder(text = dDayText.toString()).build(),
@@ -72,6 +83,8 @@ class ComplicationDataSourceService : SuspendingComplicationDataSourceService() 
             }
             .first()
 
+        val icon = Icon.createWithResource(this, R.drawable.ic_complication)
+
         val dDayText = calculateDate(date, setFirstDayAsOneDay)
 
         return when (request.complicationType) {
@@ -79,15 +92,37 @@ class ComplicationDataSourceService : SuspendingComplicationDataSourceService() 
                 text = PlainComplicationText.Builder(text = dDayText.toString()).build(),
                 contentDescription = PlainComplicationText.Builder(text = "Short D-Day Counter.")
                     .build()
+            ).setMonochromaticImage(
+                MonochromaticImage.Builder(
+                    icon
+                ).build()
             ).build()
+
+            ComplicationType.LONG_TEXT -> LongTextComplicationData.Builder(
+                text = PlainComplicationText.Builder(text = dDayText.toString()).build(),
+                contentDescription = PlainComplicationText.Builder(text = "Long D-Day Counter.")
+                    .build()
+            )
+                .setMonochromaticImage(
+                    MonochromaticImage.Builder(
+                        icon
+                    ).build()
+                )
+                .build()
 
             ComplicationType.RANGED_VALUE -> {
                 RangedValueComplicationData.Builder(
-                    value = 0f,
+                    value = dDayText.toFloat(),
                     min = 0f,
-                    max= 0f,
+                    max= dDayText.toFloat() * 2,
                     contentDescription = PlainComplicationText.Builder(text = "D-Day Watch").build()
-                ).setText(PlainComplicationText.Builder(dDayText.toString()).build()).setTapAction(null).build()
+                )
+                    .setMonochromaticImage(
+                        MonochromaticImage.Builder(
+                            icon
+                        ).build()
+                    )
+                    .setText(PlainComplicationText.Builder(dDayText.toString()).build()).setTapAction(null).build()
             }
 
             else -> {

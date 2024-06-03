@@ -41,4 +41,12 @@
     <string name="TXT_CONFIRM_DELETE_D_DAY">이 D-Day를 제거하시겠습니까?</string>
     <string name="TXT_DELETED_SUCCESSFULLY">D-Day가 제거되었습니다.</string>
     <string name="TXT_DELETE_ERROR">D-Day를 제거하는 중 문제가 발생했습니다.\n나중에 다시 시도하세요.</string>
+    <string name="TXT_SETTINGS">설정</string>
+    <string name="TXT_SIGN_OUT">로그아웃</string>
+    <string name="TXT_CONFIRM_SIGN_OUT">로그아웃 하시겠습니까?</string>
+    <string name="TXT_SIGN_OUT_SUCCESS">로그아웃이 완료되었습니다.\n로그인 페이지로 이동합니다.</string>
+    <string name="TXT_CANCEL_MEMBERSHIP">회원 탈퇴</string>
+    <string name="TXT_CONFIRM_CANCEL_MEMBRSHIP">회원탈퇴 시 모든 데이터가 제거되며, 복구할 수 없습니다.\n계속하시겠습니까?</string>
+    <string name="TXT_CANCEL_MEMBERSHIP_SUCCESS">회원탈퇴가 완료되었습니다.</string>
+    <string name="TXT_REQUEST_CANCEL_MEMBERSHIP">회원탈퇴 요청하기</string>
 </resources>

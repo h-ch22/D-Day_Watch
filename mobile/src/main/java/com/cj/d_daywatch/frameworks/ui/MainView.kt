@@ -1,6 +1,8 @@
 package com.cj.d_daywatch.frameworks.ui
 
 import android.util.Log
+import androidx.activity.compose.BackHandler
+import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,6 +18,7 @@ import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.AlertDialog
@@ -30,6 +33,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -53,12 +57,16 @@ import com.cj.d_daywatch.d_day.ui.DDayDetailView
 import com.cj.d_daywatch.frameworks.models.ADD_D_DAY
 import com.cj.d_daywatch.frameworks.models.DETAILS
 import com.cj.d_daywatch.frameworks.models.HOME
+import com.cj.d_daywatch.frameworks.models.SETTINGS
+import com.cj.d_daywatch.settings.ui.SettingsView
 import com.cj.d_daywatch.ui.theme.DDayWatchTheme
 import com.cj.d_daywatch.ui.theme.dDayBG1
 import com.cj.d_daywatch.ui.theme.dDayBG2
 import com.cj.d_daywatch.ui.theme.dDayBG3
 import com.cj.d_daywatch.ui.theme.dDayBG4
 import com.cj.d_daywatch.ui.theme.dDayBG5
+import com.cj.d_daywatch.userManagement.helper.UserManagement
+import kotlinx.coroutines.launch
 import java.util.Locale
 
 @Composable
@@ -79,6 +87,10 @@ fun MainView() {
         mutableStateOf<DDayDataModel?>(null)
     }
 
+    BackHandler {
+        Runtime.getRuntime().runFinalization()
+    }
+
     NavHost(navController = navController, startDestination = HOME) {
         composable(ADD_D_DAY) {
             AddDDayView(parent = navController)
@@ -86,6 +98,10 @@ fun MainView() {
 
         composable(DETAILS){
             selectedDDay?.let { DDayDetailView(data = it, parent = navController) }
+        }
+
+        composable(SETTINGS){
+            SettingsView(parent = navController)
         }
 
         composable(HOME) {
@@ -119,6 +135,16 @@ fun MainView() {
                                 )
 
                                 Spacer(modifier = Modifier.weight(1f))
+
+                                IconButton(onClick = {
+                                    navController.navigate(SETTINGS) {
+                                        popUpTo(HOME) {
+                                            inclusive = false
+                                        }
+                                    }
+                                }) {
+                                    Icon(imageVector = Icons.Rounded.Settings, contentDescription = null)
+                                }
                             }
 
                             Spacer(modifier = Modifier.height(20.dp))

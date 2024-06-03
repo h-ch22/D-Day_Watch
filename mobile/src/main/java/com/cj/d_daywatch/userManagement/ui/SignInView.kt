@@ -3,6 +3,7 @@ package com.cj.d_daywatch.userManagement.ui
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
@@ -162,6 +163,10 @@ fun SignInView() {
                 }
             }
         }
+    }
+
+    BackHandler {
+        Runtime.getRuntime().runFinalization()
     }
 
     DDayWatchTheme {

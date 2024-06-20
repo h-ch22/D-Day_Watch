@@ -87,6 +87,7 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.coil.compose)
+    implementation(libs.glance)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
